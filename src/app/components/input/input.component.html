@@ -1,0 +1,6 @@
+<input #input
+       [placeholder]="placeholder"
+       (input)="onChange($event.target.value)"
+       (blur)="onTouched()"
+/>
+<div class="error" *ngFor="let error of errors$ | async">{{ error }}</div>

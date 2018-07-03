@@ -1,0 +1,46 @@
+@import "../mixins";
+
+:host {
+  display: flex;
+  justify-content: stretch;
+  @include breakpoint(sm) {
+    flex-direction: column-reverse;
+  }
+  @include breakpoint(lg) {
+    flex-direction: row;
+  }
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-items: stretch;
+}
+
+.panel {
+  @extend .flex-col;
+  @include breakpoint(sm) {
+    flex-direction: row;
+    height: fit-content;
+  }
+  @include breakpoint(lg) {
+    width: 20%;
+  }
+  padding: 1rem;
+
+  .add-placemark-form {
+    @extend .flex-col;
+    flex-shrink: 0;
+  }
+
+  .descriptions {
+    @extend .flex-col;
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 1px;
+  }
+}
+
+.map {
+  flex-grow: 1;
+}
