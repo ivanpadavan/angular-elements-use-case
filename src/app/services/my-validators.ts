@@ -1,5 +1,6 @@
 import {AbstractControl, FormControl} from '@angular/forms';
-import { isString } from 'util';
+
+const isString = (s) => !!s;
 
 export class MyValidators {
   static handleNumber(control: AbstractControl) {
